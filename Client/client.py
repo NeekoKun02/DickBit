@@ -1,10 +1,10 @@
 import sys, os
 from dotenv import load_dotenv
-from send import Send
+from send import *
 from list import List
 from login import *
 from help import *
-from lost import Lost
+from lost import *
 
 global IP, PORT, ID_LENGTH
 load_dotenv()
@@ -45,18 +45,15 @@ def options(c):
     elif c == '2':
         List().contacts()
     elif c == '3':
-        Send(IP, PORT, ID_LENGTH).pre_send(None)
+        send(IP, PORT, ID_LENGTH).pre_send()
     elif c == '4':
-        Lost.lost()
+        lost()
     elif c == '5':
         help()
     elif c == '0':
         exit()
     else:
         print('Enter a number from 0 to 5')
-
-def send():
-    print('sended')
 
 #########################################################################################################################
 #########################################################################################################################

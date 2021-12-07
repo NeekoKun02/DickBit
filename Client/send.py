@@ -1,6 +1,6 @@
 import json, socket
 
-def pre_send(IP, PORT, ID_LENGTH):
+def send(IP, PORT, ID_LENGTH):
     acceptable = False
     receiver = input('Enter receiver or number, or "_" to go back: ')
     if receiver == '_':
@@ -30,5 +30,4 @@ def pre_send(IP, PORT, ID_LENGTH):
     
     msg = input('Enter the message:\n\n')
 
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.sendto((msg, num), (IP, PORT))
+    socket.socket(socket.AF_INET, socket.SOCK_DGRAM).sendto((msg, num), (IP, PORT))
