@@ -1,9 +1,21 @@
-import socket
-IP = '25.77.41.66'
-PORT = 12346
+import json, socket
+from hashmap import HashMap
+
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-s.bind((IP,PORT))
-data, addr = s.recvfrom(1024)
-print ('received from' ,addr)
-print ('obtained', data.decode('utf-8'))
-s.close()
+index = HashMap().add(json.load(open('./Server/numbers_ips.py')))
+pakage, ip = s.recvfrom()      # pakage = (<sender>, <type>, (<receiver>, <msgContent>))
+
+################################################################################################
+################################################################################################
+
+def send(pkg):
+    
+
+################################################################################################
+################################################################################################
+
+switcher={
+    'msg' : sendto(pakage)
+}
+
+switcher.get(pakage[0], error(pakage))
