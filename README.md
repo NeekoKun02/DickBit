@@ -1,2 +1,2 @@
 # DickBit
-# Send Dick Pic using DickBit
+Send Dick Pic using DickBit
