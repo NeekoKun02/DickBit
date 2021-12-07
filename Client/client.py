@@ -1,15 +1,17 @@
-import socket
-import sys
+import sys, os
+from dotenv import load_dotenv
 from send import Send
 from list import List
-from login import Login
-from help import Help
+from login import *
+from help import *
 from lost import Lost
 
 global IP, PORT, ID_LENGTH
-ID_LENGTH = 10
-IP = '25.77.41.66'
-PORT = 12346
+load_dotenv()
+
+IP = os.getenv('IP')
+PORT = os.getenv('PORT')
+ID_LENGTH = os.getenv('ID_LENGTH')
 
 def logo():
     print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
@@ -39,7 +41,7 @@ def exit():
 
 def options(c):
     if c == '1':
-        Login.login()
+        login()
     elif c == '2':
         List().contacts()
     elif c == '3':
@@ -47,7 +49,7 @@ def options(c):
     elif c == '4':
         Lost.lost()
     elif c == '5':
-        Help.help()
+        help()
     elif c == '0':
         exit()
     else:

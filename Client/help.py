@@ -1,12 +1,14 @@
-class Help:
-    def list():
+def help(arg):
+    if (arg == 'list'):
         print('Help list')
 
-    def login():
+    elif (arg == 'login'):
         print('Help login')
 
-    def lost():
+    elif (arg == 'lost'):
         print('Help lost')
 
-    def send():
+    elif (arg == 'send'):
         print('Help send')
+    else:
+        print(f'Invalid argument {arg} for help command ')

@@ -1,3 +1,2 @@
-class Login:
-    def login():
-        return 'logged in'
+def login():
+    return 'logged in'
